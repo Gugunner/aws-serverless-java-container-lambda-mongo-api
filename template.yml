@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Serverless Spring Boot 2 API - com.gugunner.aws.lambda.mongo.api::com-gugunner-aws-lambda-mongo-api
+Globals:
+  Api:
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  ComGugunnerAwsLambdaMongoApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.gugunner.aws.lambda.mongo.api.StreamLambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: .
+      MemorySize: 512
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 30
+      Events:
+        ProxyResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  ComGugunnerAwsLambdaMongoApiApi:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/cars'
+    Export:
+      Name: ComGugunnerAwsLambdaMongoApiApi

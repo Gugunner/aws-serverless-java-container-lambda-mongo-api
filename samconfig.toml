@@ -1,0 +1,11 @@
+version = 0.2
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "car-api-lambda"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-yzecfmy2dbs7"
+s3_prefix = "car-api-lambda"
+region = "us-west-1"
+profile = "admin-gugunner"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
