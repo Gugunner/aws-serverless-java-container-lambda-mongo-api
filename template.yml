@@ -21,6 +21,10 @@ Resources:
           Properties:
             Path: /{proxy+}
             Method: any
+      Environment:
+        Variables:
+          MONGO_USER: !Ref serverApp
+          MONGO_PASS: !Ref sBLQZZ8LjaNmWHVC
 
 Outputs:
   ComGugunnerAwsLambdaMongoApiApi:

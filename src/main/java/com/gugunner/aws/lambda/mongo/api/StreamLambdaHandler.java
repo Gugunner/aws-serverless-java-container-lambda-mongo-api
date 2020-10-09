@@ -21,12 +21,12 @@ public class StreamLambdaHandler implements RequestStreamHandler {
         try {
             handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(Application.class);
             // For applications that take longer than 10 seconds to start, use the async builder:
-             long startTime = Instant.now().toEpochMilli();
-             handler = new SpringBootProxyHandlerBuilder()
-                                .asyncInit(startTime)
-                                .defaultProxy()
-                                .springBootApplication(Application.class)
-                                .buildAndInitialize();
+//             long startTime = Instant.now().toEpochMilli();
+//             handler = new SpringBootProxyHandlerBuilder()
+//                                .asyncInit(startTime)
+//                                .defaultProxy()
+//                                .springBootApplication(Application.class)
+//                                .buildAndInitialize();
         } catch (ContainerInitializationException e) {
             // if we fail here. We re-throw the exception to force another cold start
             e.printStackTrace();
