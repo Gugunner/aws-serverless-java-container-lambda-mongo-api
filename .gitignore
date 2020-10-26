@@ -1,0 +1,5 @@
+/.aws-sam
+/.idea
+/target
+.DS_STORE
+/.gradle
