@@ -1,4 +1,4 @@
 {
-  "MONGO_USER": "serverApp",
-  "MONGO_PASS": "sBLQZZ8LjaNmWHVC"
+  "MONGO_USER": "mongo-user",
+  "MONGO_PASS": "mongo-pass"
 }
